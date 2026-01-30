@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>For You ❤️</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body class="heart-page">
+    <div class="heart-container">
+      <div class="heart" id="heart">❤️</div>
+    </div>
+
+    <script>
+      const heart = document.getElementById("heart");
+
+      heart.addEventListener(
+        "click",
+        () => {
+          heart.classList.add("expand");
+
+          // redirect after animation finishes
+          setTimeout(() => {
+            window.location.href = "index.html";
+          }, 1200);
+        },
+        { once: true },
+      );
+    </script>
+  </body>
+</html>

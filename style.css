@@ -1,0 +1,309 @@
+/* ---------- HEART TRANSITION PAGE ---------- */
+.heart-page {
+  margin: 0;
+  height: 100vh;
+  background: linear-gradient(135deg, #141e30, #243b55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Heart container */
+.heart-container {
+  position: relative;
+}
+
+/* Heart */
+.heart {
+  font-size: 4rem;
+  cursor: pointer;
+  animation: pulse 1.5s infinite;
+  transition: transform 1.2s ease, opacity 1.2s ease;
+}
+
+/* Pulse animation */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+/* Expand to fill screen */
+.heart.expand {
+  transform: scale(50); /* fills entire screen */
+  opacity: 0.95;
+  animation: none;
+}
+
+
+
+
+
+/* ---------- GLOBAL ---------- */
+body {
+  margin: 0;
+  margin-top: 20px;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+}
+
+/* ---------- CALENDAR PAGE ---------- */
+.calendar-page {
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #1e7195, #203a43, #2c5364);
+}
+
+.calendar {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 20px;
+  width: 320px;
+  text-align: center;
+}
+
+.calendar h1 {
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+}
+
+.day {
+  opacity: 0.6;
+  font-size: 0.9rem;
+}
+
+.date {
+  padding: 12px 0;
+  border-radius: 30%;
+  opacity: 0.6;
+}
+
+.special {
+  background: #ff4d6d;
+  opacity: 1;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 15px rgba(255, 77, 109, 0.7);
+  transition: transform 0.2s;
+}
+
+.special:hover {
+  transform: scale(1.1);
+  background-color: blue;
+}
+
+.hint {
+  margin-top: 25px;
+  font-size: 0.95rem;
+  opacity: 0.85;
+}
+
+
+
+/* ---------- GREETING PAGE ---------- */
+.greeting-page {
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom, #141e30, #243b55);
+  text-align: center;
+  background-image: url(/images/Heart.jpg);
+  background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    color: rgb(255, 255, 255);
+}
+
+.message {
+  max-width: 520px;
+  padding: 40px 30px;
+}
+
+.message h1 {
+  font-size: 2.6rem;
+  margin-bottom: 20px;
+  margin-top: 100px;
+}
+
+.message p {
+  font-size: 1.15rem;
+  line-height: 1.9;
+  margin: 18px 0;
+}
+
+.heart {
+  font-size: 2.5rem;
+  margin: 25px 0;
+}
+
+footer {
+  margin-top: 35px;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+.heart-pulse {
+  font-size: 2.8rem;
+  margin: 25px 0;
+  display: inline-block;
+  animation: heartPulse 1.8s ease-in-out infinite;
+  text-shadow: 0 0 12px rgba(255, 77, 109, 0.8);
+}
+
+@keyframes heartPulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+}
+.delay1 {
+  animation-delay: 0s, 0s;
+}
+
+.delay2 {
+  animation-delay: 6s, 0.3s;
+  font-size: 1.8rem;
+}
+/* ---------- BUTTERFLY LAYER ---------- */
+.butterfly-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 2;
+}
+
+/* ---------- BUTTERFLY ---------- */
+.butterfly {
+  position: absolute;
+  left: -10%;
+  font-size: 2.2rem;
+  filter: drop-shadow(0 0 10px rgba(255, 160, 180, 0.7));
+  animation:
+    flyPath 30s linear infinite,
+    wingFlap 0.7s ease-in-out infinite;
+  animation-delay: var(--d), 0s;
+}
+
+/* ---------- FLIGHT PATH ---------- */
+@keyframes flyPath {
+  0% {
+    top: var(--sy);
+    left: -10%;
+    opacity: 0;
+    transform: rotate(10deg);
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  50% {
+    top: var(--my);
+    left: 55%;
+    transform: rotate(-10deg);
+  }
+
+  100% {
+    top: var(--ey);
+    left: 110%;
+    opacity: 0;
+    transform: rotate(10deg);
+  }
+}
+
+/* ---------- WING FLAP ---------- */
+@keyframes wingFlap {
+  0%   { transform: scaleX(1); }
+  50%  { transform: scaleX(0.8); }
+  100% { transform: scaleX(1); }
+}
+/* ---------- HORIZONTAL GALLERY ---------- */
+.gallery-page {
+  font-family: 'Georgia', serif;
+  background: linear-gradient(to bottom, #141e30, #243b55);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  overflow-x: hidden; /* prevent horizontal scrollbar for body */
+}
+
+.gallery-page header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 5px;
+}
+
+.gallery-page header p {
+  font-size: 1.1rem;
+  margin-bottom: 30px;
+  opacity: 0.85;
+}
+
+/* Horizontal scroll container */
+.gallery-container {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  overflow-x: auto;
+  padding-bottom: 20px;
+  scroll-behavior: smooth;
+}
+
+/* Hide scrollbar (optional) */
+.gallery-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Individual photo */
+.photo {
+  flex: 0 0 auto; /* prevents shrinking */
+  width: 200px; /* initial width */
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.5s ease;
+  position: relative;
+}
+
+/* Photo image */
+.photo img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  transition: all 0.5s ease;
+}
+
+/* Hover effect: expand to 50% of viewport width */
+.photo:hover {
+  width: 30vw;
+  z-index: 10;
+  box-shadow: 0 20px 50px rgba(255,182,193,0.8);
+}
+
+.photo:hover img {
+  width: 100%;
+  transform: scale(1.05);
+}
+
+
+
+
